@@ -1,8 +1,8 @@
-const asyncHandler = require('./middleware/asyncHandler');
+const asyncHandler = require('../middleware/asyncHandler');
 const jwt = require('jsonwebtoken');
-const User = require('./models/User');
-const Farmer = require('./models/Farmer');
-const Buyer = require('./models/Buyer');
+const User = require('../models/user');
+const Farmer = require('../models/farmer');
+const Buyer = require('../models/Buyer');
 
 // Helper to generate token
 const generateToken = (id) => {

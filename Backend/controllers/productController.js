@@ -1,6 +1,6 @@
-const asyncHandler = require('./middleware/asyncHandler');
-const Product = require('./models/Product');
-const Farmer = require('./models/Farmer');
+const asyncHandler = require('../middleware/asyncHandler');
+const Product = require('../models/Product');
+const Farmer = require('../models/farmer');
 
 // Create product (only farmers)
 exports.createProduct = asyncHandler(async (req, res) => {

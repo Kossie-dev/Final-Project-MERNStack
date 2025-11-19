@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {productController} = require('./controllers/productController');
-const { protect, requireRole } = require('./middleware/authMiddleware');
-const { upload } = require('./config/cloudinary');
+const {getProducts, getProductById, updateProduct, deleteProduct, createProduct} = require('../controllers/productController');
+const { protect, restrictTo } = require('../middleware/authMiddleware');
+const { upload } = require('../config/cloudinary');
 
 // Public
 router.get('/', getProducts);
@@ -12,10 +12,10 @@ router.get('/:id', getProductById);
 router.post(
     '/', 
     protect, 
-    requireRole('farmer'),
+    restrictTo('farmer'),
     upload.single('image'),
-    productController.createProduct);
-router.put('/:id', protect, requireRole('farmer'), updateProduct);
-router.delete('/:id', protect, requireRole('farmer'), deleteProduct);
+    createProduct);
+router.put('/:id', protect, restrictTo('farmer'), updateProduct);
+router.delete('/:id', protect, restrictTo('farmer'), deleteProduct);
 
 module.exports = router;

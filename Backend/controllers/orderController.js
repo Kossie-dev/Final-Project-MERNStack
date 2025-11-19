@@ -1,8 +1,8 @@
-const asyncHandler = require('./middleware/asyncHandler');
-const Order = require('./models/Order');
-const Buyer = require('./models/Buyer');
-const Farmer = require('./models/Farmer');
-const Product = require('./models/Product');
+const asyncHandler = require('../middleware/asyncHandler');
+const Order = require('../models/Order');
+const Buyer = require('../models/Buyer');
+const Farmer = require('../models/farmer');
+const Product = require('../models/Product');
 
 // Create an order (buyer)
 exports.createOrder = asyncHandler(async (req, res) => {

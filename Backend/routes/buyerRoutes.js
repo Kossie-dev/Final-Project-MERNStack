@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { getMyProfile, updateProfile } = require('./controllers/buyerController');
-const { protect, requireRole } = require('./middleware/authMiddleware');
+const { getMyProfile, updateProfile } = require('../controllers/buyerController');
+const { protect, restrictTo } = require('../middleware/authMiddleware');
 
-router.get('/me', protect, requireRole('buyer'), getMyProfile);
-router.put('/me', protect, requireRole('buyer'), updateProfile);
+router.get('/me', protect, restrictTo('buyer'), getMyProfile);
+router.put('/me', protect, restrictTo('buyer'), updateProfile);
 
 module.exports = router;

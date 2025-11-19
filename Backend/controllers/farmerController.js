@@ -1,6 +1,6 @@
-const asyncHandler = require('./middleware/asyncHandler');
-const Farmer = require('./models/Farmer');
-const User = require('./models/User');
+const asyncHandler = require('../middleware/asyncHandler');
+const Farmer = require('../models/farmer');
+const User = require('../models/user');
 
 // Get current farmer profile (protected)
 exports.getMyProfile = asyncHandler(async (req, res) => {

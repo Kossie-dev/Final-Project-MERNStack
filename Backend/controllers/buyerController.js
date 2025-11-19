@@ -1,5 +1,5 @@
-const asyncHandler = require('./middleware/asyncHandler');
-const Buyer = require('./models/Buyer');
+const asyncHandler = require('../middleware/asyncHandler');
+const Buyer = require('../models/Buyer');
 
 // Get buyer profile
 exports.getMyProfile = asyncHandler(async (req, res) => {

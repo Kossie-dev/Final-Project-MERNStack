@@ -11,7 +11,7 @@ cloudinary.config({
 
 // Storage settings
 const storage = new CloudinaryStorage({
-  cloudinary,
+  cloudinary: cloudinary,
   params: {
     folder: "limamarket/products",
     allowed_formats: ["jpg", "png", "jpeg"],
