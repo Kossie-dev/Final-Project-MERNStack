@@ -5,7 +5,7 @@ const farmerSchema = new mongoose.Schema({
   farmName: { type: String, required: true },
   farmLocation: { type: String, required: true },
   farmSize: { type: String }, // e.g., "5 acres"
-  farmType: { type: String, enum: ['crop', 'livestock', 'mixed'], default: 'crop' },
+  farmType: { type: String, enum: ['Fruits', 'Vegetables', 'Cereals', 'Animal Products'], default: 'Vegetables' },
   bio: { type: String },
   profileImageUrl: { type: String, required: false },
   rating: { type: Number, default: 0 },

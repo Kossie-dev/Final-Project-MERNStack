@@ -31,6 +31,26 @@ exports.updateProfile = asyncHandler(async (req, res) => {
   res.json(farmer);
 });
 
+// Public: get all farmers
+exports.getAllFarmers = async (req, res) => {
+  try {
+    const farmers = await Farmer.find().select("-password"); 
+    // Remove password for security
+
+    res.status(200).json({
+      success: true,
+      count: farmers.length,
+      data: farmers,
+    });
+  } catch (error) {
+    console.error("Error fetching farmers:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server Error. Could not fetch farmers.",
+    });
+  }
+};
+
 // Public: get farmer by id
 exports.getFarmerById = asyncHandler(async (req, res) => {
   const farmer = await Farmer.findById(req.params.id).populate('user', 'name email');

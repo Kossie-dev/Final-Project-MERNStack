@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
   farmer: { type: mongoose.Schema.Types.ObjectId, ref: 'Farmer', required: true },
   name: { type: String, required: true, trim: true },
-  category: { type: String, enum: ['fruits', 'vegetables', 'grains', 'livestock', 'others'], default: 'others' },
+  category: { type: String, enum: ['Fruits', 'Vegetables', 'Cereals', 'Animal Products', 'others'], default: 'others' },
   description: { type: String },
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
